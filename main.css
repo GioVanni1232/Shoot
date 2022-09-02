@@ -18,3 +18,15 @@ body{
   left: 0;
 }
 
+.name{
+  position: absolute;
+  right: 100px;
+  top: 100px;
+}
+
+.addSpeed{
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+

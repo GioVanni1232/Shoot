@@ -9,6 +9,8 @@ colision.width = window.innerWidth;
 colision.height = window.innerHeight;
 ctx.font = '50px Impact';
 
+
+
 let timeToNextRaven = 0;
 let ravenInterval = 500;
 let lastTime = 0;
@@ -26,7 +28,7 @@ class Raven {
     this.height = 100 ;
     this.x = canvas.width;
     this.y = Math.random() * (canvas.height - this.height);
-    this.directionX = 3;
+    this.directionX =3;
     this.directionY = Math.random() * 5 - 2.5;
     this.markedForDeletion = false;
     this.randomColor = [Math.floor(Math.random() * 255), Math.floor(Math.random() * 255), Math.floor(Math.random() * 255)];
@@ -39,7 +41,6 @@ class Raven {
 
   
     this.x -= this.directionX;
-    if(this.timer > 500)this.directionX +=100;
     this.y -= this.directionY;
     if (this.x < 0 - this.width){
       this.markedForDeletion = true;
@@ -61,7 +62,6 @@ function drawScore(){
 
 window.addEventListener('click', e=> {
   const detectPixelColor = ctx.getImageData(e.x, e.y, 1, 1);
-  console.log(detectPixelColor);
   const pc = detectPixelColor.data;
   ravens.forEach(object =>{
     if(object.randomColor[0] === pc[0] && object.randomColor[1] === pc[1] && object.randomColor[2] === pc[2] ){
